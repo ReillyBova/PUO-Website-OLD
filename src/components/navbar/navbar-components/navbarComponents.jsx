@@ -25,77 +25,77 @@ export const NavbarMain = styled.div`
   &.mini {
     @media screen and (min-width: 1251px) {
       .navbar-brand-orch { width: 225px; }
-      .navbar-brand-text.inline { width: 250px; padding: 16px 0px;}
-      .navbar-brand-text.below { display: none; }
+      .navbar-brand-text.inline { width: 250px; padding: 16px 0px; animation-name: fadeDownInline; }
+      .navbar-brand-text.below { display: none; animation: none; }
     }
     @media screen and (min-width: 1101px) and (max-width: 1250px) {
       .navbar-brand-orch { width: 150px; }
-      .navbar-brand-text.inline { width: 215px; padding: 16px 0px;}
-      .navbar-brand-text.below { display: none; }
+      .navbar-brand-text.inline { width: 215px; padding: 16px 0px; animation-name: fadeDownInline; }
+      .navbar-brand-text.below { display: none; animation: none; }
     }
     @media screen and (min-width: 1016px) and (max-width: 1100px) {
       .navbar-brand { display: block; max-width: 150px;}
       .navbar-brand-orch { width: 150px; padding-bottom: 0;}
-      .navbar-brand-text.inline { display: none; }
-      .navbar-brand-text.below { width: 150px;}
+      .navbar-brand-text.inline { display: none; animation: none; }
+      .navbar-brand-text.below { width: 150px; animation-name: fadeDownBelow; }
     }
     @media screen and (min-width: 701px) and (max-width: 1015px) {
       .navbar-brand { display: block; max-width: 120px;}
       .navbar-brand-orch { width: 120px; padding-bottom: 0;}
-      .navbar-brand-text.inline { display: none; }
-      .navbar-brand-text.below { width: 120px;}
+      .navbar-brand-text.inline { display: none; animation: none; }
+      .navbar-brand-text.below { width: 120px; animation-name: fadeDownBelow; }
     }
     @media screen and (min-width: 600px) and (max-width: 700px) {
       .navbar-brand-orch { width: 152px; }
-      .navbar-brand-text.inline { width: 175px; padding: 0; }
-      .navbar-brand-text.below { display: none; }
+      .navbar-brand-text.inline { width: 175px; padding: 0; animation-name: fadeDownInline; }
+      .navbar-brand-text.below { display: none; animation: none; }
     }
     @media screen and (min-width: 361px) and (max-width: 599px) {
       .navbar-brand-orch { width: 120px; padding: 8px 12px 0 8px; }
-      .navbar-brand-text.inline { width: 138px; padding: 10px 0 0 0; }
-      .navbar-brand-text.below { display: none; }
+      .navbar-brand-text.inline { width: 138px; padding: 10px 0 0 0; animation-name: fadeDownInline; }
+      .navbar-brand-text.below { display: none; animation: none; }
     }
     @media screen and (max-width: 360px) {
       .navbar-brand { display: block; max-width: 80px; line-height: 0;}
       .navbar-brand-orch { width: 80px; padding: 7.5px 0 3px 8px;}
-      .navbar-brand-text.inline { display: none; }
-      .navbar-brand-text.below { width: 80px; padding: 0 8px}
+      .navbar-brand-text.inline { display: none; animation: none; }
+      .navbar-brand-text.below { width: 80px; padding: 0 8px; animation-name: fadeDownBelow; }
     }
   }
 
   &:not(.mini) {
     @media screen and (min-width: 1521px) {
       .navbar-brand-orch { width: 300px; }
-      .navbar-brand-text.inline { width: 335px; }
-      .navbar-brand-text.below { display: none; }
+      .navbar-brand-text.inline { width: 335px; animation-name: fadeDownInline; }
+      .navbar-brand-text.below { display: none; animation: none; }
     }
     @media screen and (min-width: 1025px) and (max-width: 1520px) {
       .navbar-brand { display: block; max-width: 225px;}
       .navbar-brand-orch { width: 225px; padding-bottom: 0}
-      .navbar-brand-text.inline { display: none; }
-      .navbar-brand-text.below { width: 225px; }
+      .navbar-brand-text.inline { display: none; animation: none; }
+      .navbar-brand-text.below { width: 225px; animation-name: fadeDownBelow; }
     }
     @media screen and (min-width: 701px) and (max-width: 1024px) {
       .navbar-brand { display: block; max-width: 190px;}
       .navbar-brand-orch { width: 190px; padding-bottom: 0}
-      .navbar-brand-text.inline { display: none; }
-      .navbar-brand-text.below { width: 190px; }
+      .navbar-brand-text.inline { display: none; animation: none; }
+      .navbar-brand-text.below { width: 190px; animation-name: fadeDownBelow;  }
     }
     @media screen and (min-width: 536px) and (max-width: 700px) {
       .navbar-brand-orch { width: 190px; padding: 18px 16px;}
-      .navbar-brand-text.inline { width: 220px; padding: 0; }
-      .navbar-brand-text.below { display: none; }
+      .navbar-brand-text.inline { width: 220px; padding: 0; animation-name: fadeDownInline; }
+      .navbar-brand-text.below { display: none; animation: none; }
     }
     @media screen and (min-width: 421px) and (max-width: 535px) {
       .navbar-brand-orch { width: 150px; padding: 27px 16px;}
-      .navbar-brand-text.inline { width: 150px; padding: 0; }
-      .navbar-brand-text.below { display: none; }
+      .navbar-brand-text.inline { width: 150px; padding: 0; animation-name: fadeDownInline; }
+      .navbar-brand-text.below { display: none; animation: none; }
     }
     @media screen and (max-width: 420px) {
       .navbar-brand { display: block; max-width: 125px; line-height: 0;}
       .navbar-brand-orch { width: 125px; padding: 15px 0 4px 16px;}
-      .navbar-brand-text.inline { display: none; }
-      .navbar-brand-text.below { width: 125px;}
+      .navbar-brand-text.inline { display: none; animation: none; }
+      .navbar-brand-text.below { width: 125px; animation-name: fadeDownBelow; }
     }
   }
 `
@@ -131,12 +131,12 @@ export const NavbarBrand = styled.div`
 
     @keyframes fadeDownInline {
       0% { opacity: 0; transform: translateY(-50px); }
-      25% { opacity: 0; -webkit-transform: translateY(-50px); }
+      25% { opacity: 0; transform: translateY(-50px); }
       100% { opacity: 1; transform: translateY(0); }
     }
     @keyframes fadeDownBelow {
       0% { opacity: 0; transform: translateY(-12px); }
-      25% { opacity: 0; -webkit-transform: translateY(-12px); }
+      25% { opacity: 0; transform: translateY(-12px); }
       100% { opacity: 1; transform: translateY(0); }
     }
   }

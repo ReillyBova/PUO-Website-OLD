@@ -8,12 +8,12 @@ class App extends Component {
       <div className='app-wrapper'>
         <Navbar />
         <div>Hellloooo</div>
-      {/*  <Switch>
+        {/*<Switch>
           <Route exact path={`${process.env.PUBLIC_URL}/`} component={AccountPage}/>
           <Route exact path={`${process.env.PUBLIC_URL}/account`} component={AccountPage}/>
-          <Route path={`${process.env.PUBLIC_URL}/browse`}component={BrowserPage}/>
-          <Route path={`${process.env.PUBLIC_URL}/billing`} component={BillingPage}/>
-          <Route path={`${process.env.PUBLIC_URL}/about`} component={AboutPage}/>
+          <Route exact path={`${process.env.PUBLIC_URL}/browse`}component={BrowserPage}/>
+          <Route exact path={`${process.env.PUBLIC_URL}/billing`} component={BillingPage}/>
+          <Route exact path={`${process.env.PUBLIC_URL}/about`} component={AboutPage}/>
         </Switch>*/}
       </div>
     );
