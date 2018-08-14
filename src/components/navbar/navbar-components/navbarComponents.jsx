@@ -15,14 +15,11 @@ export const NavbarMain = styled.div`
   font-size: 24px;
   font-weight: 500;
 
-  -webkit-transition: height, font-size, 0.5s ease;
   transition: height, font-size, 0.5s ease;
   &.mini {
     font-size: 18px;
     height: 70px;
-  }
 
-  &.mini {
     @media screen and (min-width: 1251px) {
       .navbar-brand-orch { width: 225px; }
       .navbar-brand-text.inline { width: 250px; padding: 16px 0px; animation-name: fadeDownInline; }
@@ -163,43 +160,68 @@ export const NavbarButton = styled.div`
     height: 32px;
     stroke: ${props => props.theme.black};
     &:hover { stroke: ${props => props.theme.orange}; }
+    path {
+      transition: all 0.5s ease;
+    }
   }
+  &.active { svg { stroke: ${props => props.theme.orange} !important; } }
 `
 
 export const NavbarLinks = styled.div`
-  @media screen and (min-width: 701px) {
-    padding: 0 16px 0 24px;
-    margin-left: 225px;
-    height: 100%;
-    justify-content: flex-end;
-    flex-flow: row wrap;
-    align-items: center;
-    display:flex;
-    align-content: center;
-  }
+  padding: 0 16px 0 24px;
+  margin-left: 225px;
+  height: 100%;
+  justify-content: flex-end;
+  flex-flow: row wrap;
+  align-items: center;
+  display:flex;
+  align-content: center;
+
   @media screen and (max-width: 700px) {
-    position: fixed;
-    z-index: 14;
-    padding: 16px 16px 16px 16px;
-    background-color: ${props => props.theme.black};
-    width: 100%;
-    margin-top: 165px;
+    display: none;
   }
+`
+
+export const NavbarMenu = styled.div`
+  overflow-y: auto;
+  max-height: 48vh;
+  position: fixed;
+  background-color: ${props => props.theme.black};
+  width: 100%;
+  margin-top: 165px;
+  padding: 16px;
+  transition: margin-top 0.5s ease;
+  display: none;
+
+  ${NavbarMain}.mini & {
+    margin-top: 70px !important;
+  }
+  ${NavbarMain}:not(.mini) & {
+    margin-top: 120px !important;
+  }
+
   @media screen and (min-width: 600px) and (max-width: 700px) {
-    margin-top: 165px;
+    padding-top: 60px;
   }
-  @media screen and (max-width: 599px) {
-    margin-top: 120px;
+
+  @media screen and (min-width: 701px) {
+    display: none !important;
   }
 `
 
 export const NavbarLink = styled.div`
   margin: 4px 12px;
-  border-bottom: 1px solid transparent;
   cursor: pointer;
-
-  &:hover {
-    border-bottom: 1px solid ${props => props.theme.orange};
+  &:after {
+    height: 2px;
+    content:'';
+    display:block;
+    width: 0;
+    transition: width .2s;
+    background: ${props => props.theme.orange};
+  }
+  &:hover::after {
+    width:100%;
   }
 
   @media screen and (max-width: 700px) {
@@ -222,6 +244,7 @@ export const NavbarTriangle = styled.svg`
   width: 100%;
   height: 80px;
   position: absolute;
+  pointer-events: none;
   margin-top: -2px;
   z-index: 10;
   &.orange {

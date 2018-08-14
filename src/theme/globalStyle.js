@@ -14,7 +14,7 @@ injectGlobal`
 
     font-family: Roboto, sans-serif;
 
-    min-height: 200vh;
+    min-height: 5000px;
 
     a {
       color: ${black};
