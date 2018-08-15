@@ -212,6 +212,11 @@ export const NavbarMenu = styled.div`
 export const NavbarLink = styled.div`
   margin: 4px 12px;
   cursor: pointer;
+  border-bottom: 0px solid transparent;
+
+  transition: border-bottom .2s;
+  a { transition: color .2s; }
+
   &:after {
     height: 2px;
     content:'';
@@ -220,8 +225,17 @@ export const NavbarLink = styled.div`
     transition: width .2s;
     background: ${props => props.theme.orange};
   }
-  &:hover::after {
-    width:100%;
+
+  @media screen and (min-width: 768px) {
+    &:hover::after {
+      width:100%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-bottom: 1px solid ${props => props.theme.orange};
+    }
   }
 
   @media screen and (max-width: 700px) {
