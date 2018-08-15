@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
 import { Navbar } from 'components'
 import styled from 'styled-components'
-
-const HomePage = styled.div`
-height: 100vh;
-`
+import { HomePage } from 'pages'
 
 const ConcertsPage = styled.div`
 height: 100vh;
@@ -47,23 +44,28 @@ height: 100vh;
 background-color: gray;
 `
 
+const ContentWrapper = styled.div`
+margin-top: 70px;
+`
+
 class App extends Component {
   render() {
     return (
       <div className='app-wrapper'>
         <Navbar />
-        <div>Hellloooo</div>
-        <Switch>
-          <Route exact path={`${process.env.PUBLIC_URL}/`} component={HomePage}/>
-          <Route exact path={`${process.env.PUBLIC_URL}/concerts`} component={ConcertsPage}/>
-          <Route exact path={`${process.env.PUBLIC_URL}/members`}component={MembersPage}/>
-          <Route exact path={`${process.env.PUBLIC_URL}/about`}component={AboutPage}/>
-          <Route exact path={`${process.env.PUBLIC_URL}/media`}component={MediaPage}/>
-          <Route exact path={`${process.env.PUBLIC_URL}/news`}component={NewsPage}/>
-          <Route exact path={`${process.env.PUBLIC_URL}/faq`}component={FAQPage}/>
-          <Route exact path={`${process.env.PUBLIC_URL}/archives`}component={ArchivesPage}/>
-          <Route exact path={`${process.env.PUBLIC_URL}/donate`}component={DonatePage}/>
-        </Switch>
+        <ContentWrapper>
+          <Switch>
+            <Route exact path={`${process.env.PUBLIC_URL}/`} component={HomePage}/>
+            <Route exact path={`${process.env.PUBLIC_URL}/concerts`} component={ConcertsPage}/>
+            <Route exact path={`${process.env.PUBLIC_URL}/members`}component={MembersPage}/>
+            <Route exact path={`${process.env.PUBLIC_URL}/about`}component={AboutPage}/>
+            <Route exact path={`${process.env.PUBLIC_URL}/media`}component={MediaPage}/>
+            <Route exact path={`${process.env.PUBLIC_URL}/news`}component={NewsPage}/>
+            <Route exact path={`${process.env.PUBLIC_URL}/faq`}component={FAQPage}/>
+            <Route exact path={`${process.env.PUBLIC_URL}/archives`}component={ArchivesPage}/>
+            <Route exact path={`${process.env.PUBLIC_URL}/donate`}component={DonatePage}/>
+          </Switch>
+        </ContentWrapper>
       </div>
     );
   }
