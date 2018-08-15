@@ -1,1 +1,1 @@
-export { default as previewVideo } from './preview.mp4'
+export { default as previewVideo } from './output.mp4'

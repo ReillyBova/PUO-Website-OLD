@@ -113,28 +113,28 @@ export class Navbar extends Component {
             </NavbarLink>
           </NavbarLinks>
           <NavbarMenu id={"navbarMenu"}>
-            <NavbarLink>
+            <NavbarLink onClick={() => this.toggleMenu()}>
               <NavLink to={`${process.env.PUBLIC_URL}/concerts`}>{`Concerts`}</NavLink>
             </NavbarLink>
-            <NavbarLink>
+            <NavbarLink onClick={() => this.toggleMenu()}>
               <NavLink to={`${process.env.PUBLIC_URL}/members`}>{`Members`}</NavLink>
             </NavbarLink>
-            <NavbarLink>
+            <NavbarLink onClick={() => this.toggleMenu()}>
               <NavLink to={`${process.env.PUBLIC_URL}/about`}>{`About`}</NavLink>
             </NavbarLink>
-            <NavbarLink>
+            <NavbarLink onClick={() => this.toggleMenu()}>
               <NavLink to={`${process.env.PUBLIC_URL}/media`}>{`Media`}</NavLink>
             </NavbarLink>
-            <NavbarLink>
+            <NavbarLink onClick={() => this.toggleMenu()}>
               <NavLink to={`${process.env.PUBLIC_URL}/news`}>{`News`}</NavLink>
             </NavbarLink>
-            <NavbarLink>
+            <NavbarLink onClick={() => this.toggleMenu()}>
               <NavLink to={`${process.env.PUBLIC_URL}/faq`}>{`FAQ`}</NavLink>
             </NavbarLink>
-            <NavbarLink>
+            <NavbarLink onClick={() => this.toggleMenu()}>
               <NavLink to={`${process.env.PUBLIC_URL}/archives`}>{`Archives`}</NavLink>
             </NavbarLink>
-            <NavbarLink>
+            <NavbarLink onClick={() => this.toggleMenu()}>
               <NavLink to={`${process.env.PUBLIC_URL}/donate`}>{`Donate`}</NavLink>
             </NavbarLink>
           </NavbarMenu>
