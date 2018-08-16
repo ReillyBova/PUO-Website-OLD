@@ -1,9 +1,14 @@
 {
   "main.css": "static/css/main.a936552e.css",
   "main.css.map": "static/css/main.a936552e.css.map",
-  "main.js": "static/js/main.c1c30823.js",
-  "main.js.map": "static/js/main.c1c30823.js.map",
+  "main.js": "static/js/main.b2f848b0.js",
+  "main.js.map": "static/js/main.b2f848b0.js.map",
+  "static/media/large.mp4": "static/media/large.005c579f.mp4",
+  "static/media/large.webm": "static/media/large.25733b96.webm",
   "static/media/logoOrch.svg": "static/media/logoOrch.55acb73b.svg",
   "static/media/logoText.svg": "static/media/logoText.cec90759.svg",
-  "static/media/output.mp4": "static/media/output.a7a0edf8.mp4"
+  "static/media/medium.mp4": "static/media/medium.a7a0edf8.mp4",
+  "static/media/medium.webm": "static/media/medium.e9efdab2.webm",
+  "static/media/small.mp4": "static/media/small.f78b6f3e.mp4",
+  "static/media/tiny.mp4": "static/media/tiny.fdce455a.mp4"
 }
