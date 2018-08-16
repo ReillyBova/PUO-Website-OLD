@@ -55,7 +55,6 @@ export class HomePage extends React.Component {
     if (width < 504) size = 'tiny'
     else if (width < 815) size = 'small'
     else if (width < 1050) size = 'medium'
-    console.log(size)
 
     this.setState({loaded: true, size: size})
 
