@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
-import { largePreviewMP4 } from 'assets/videos'
+import { largePreviewMP4, largePreviewWebM, mediumPreviewMP4, mediumPreviewWebM,
+          smallPreviewMP4, tinyPreviewMP4 } from 'assets/videos'
 import $ from 'jquery'
 
 const VideoWrapper = styled.div`
@@ -30,7 +31,8 @@ export class HomePage extends React.Component {
     this.resize_video = this.resize_video.bind(this);
 
     this.state = {
-      loaded: false
+      loaded: false,
+      size: ''
     }
   }
 
@@ -47,28 +49,55 @@ export class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({loaded: true})
+    /* determine video size using initial screen width */
+    const width = $(window).width()
+    let size = 'large'
+    if (width < 504) size = 'tiny'
+    else if (width < 815) size = 'small'
+    else if (width < 1050) size = 'medium'
+    console.log(size)
+
+    this.setState({loaded: true, size: size})
 
     $(window).resize(this.resize_video);
     this.resize_video()
   }
 
   render() {
+    const { size, loaded } = this.state
     return (
       <VideoWrapper id="previewWrapper">
-        { this.state.loaded &&
-        <Video
-          playsInline
-          muted
-          loop
-          autoPlay
-          preload="auto"
-          className={`${this.isScreenTall() ? null : 'wide'}`}
-          id="previewVideo"
-          style={{}}
-        >
-          <source type="video/mp4" src={largePreviewMP4} />
-        </Video>}
+        { loaded &&
+          <Video
+            playsInline
+            muted
+            loop
+            autoPlay
+            preload="auto"
+            className={`${(!this.isScreenTall()) && 'wide'}`}
+            id="previewVideo"
+            style={{}}
+          >
+            { size === 'tiny' &&
+              <source src={tinyPreviewMP4} type="video/mp4"/>
+            }
+            { size === 'small' &&
+              <source src={smallPreviewMP4} type="video/mp4"/>
+            }
+            { size === 'medium' &&
+              <source src={mediumPreviewWebM} type="video/webm"/>
+            }
+            { size === 'medium' &&
+              <source src={mediumPreviewMP4} type="video/mp4"/>
+            }
+            { size === 'large' &&
+              <source src={largePreviewWebM} type="video/webm"/>
+            }
+            { size === 'large' &&
+              <source src={largePreviewMP4} type="video/mp4"/>
+            }
+          </Video>
+        }
       </VideoWrapper>
     )
   }
