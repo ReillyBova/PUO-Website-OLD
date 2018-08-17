@@ -1,1 +1,1 @@
-export * from './navbarComponents'
+export * from './navbarStyles'

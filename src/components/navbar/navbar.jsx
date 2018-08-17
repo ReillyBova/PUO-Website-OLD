@@ -5,7 +5,7 @@ import { NavbarHeader, NavbarMain, NavbarBrand, NavbarButtons,
           NavbarButton, NavbarLinks, NavbarMenu, NavbarLink, NavbarTriangle } from './navbar-components'
 import $ from 'jquery';
 
-export class Navbar extends Component {
+class Navbar extends Component {
 
   scroll_navbar = () => {
     if ($(document).scrollTop() > 115) {
@@ -150,3 +150,5 @@ export class Navbar extends Component {
     )
   }
 }
+
+export default Navbar

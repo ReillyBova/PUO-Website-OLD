@@ -13,8 +13,9 @@ injectGlobal`
     background-color: ${offWhite};
 
     font-family: Roboto, sans-serif;
-
-    min-height: 5000px;
+    height: 200vh;
+    min-width: 300px;
+    overflow-x: scroll;
 
     a {
       color: ${black};

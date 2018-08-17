@@ -1,1 +1,3 @@
-export { default as Navbar } from './navbar'
+export * from './Navbar'
+export * from './Parallax'
+export * from './RaisedPage'
