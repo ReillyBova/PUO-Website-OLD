@@ -143,6 +143,10 @@ export const NavbarBrand = styled.div`
       100% { opacity: 1; transform: translateY(0); }
     }
   }
+
+  @media screen and (max-width: 215px) {
+    display: none !important;
+  }
 `
 
 export const NavbarButtons = styled.div`
