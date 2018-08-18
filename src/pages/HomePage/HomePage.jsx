@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { PreviewVideo, QuoteBox } from './home-page-components'
 import { Parallax, RaisedPage, RaisedPageSection } from 'components'
-import styled from 'styled-components'
 
 export class HomePage extends React.Component {
 
@@ -13,9 +12,9 @@ export class HomePage extends React.Component {
           <QuoteBox />
         </Parallax>
         <RaisedPage>
-          <RaisedPage.Section>
+          <RaisedPageSection>
             HELOOkwajhdwkhdkah kjhjahdkahdkjwdhawkdjhawkdjawhdkjwhdawkj
-          </RaisedPage.Section>
+          </RaisedPageSection>
         </RaisedPage>
       </Fragment>
     )

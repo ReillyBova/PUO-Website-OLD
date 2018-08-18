@@ -23,6 +23,8 @@ injectGlobal`
     &:hover {
       color: ${orange};
     }
+
+    ‑webkit‑text‑size‑adjust: 100%
   }
 `
 

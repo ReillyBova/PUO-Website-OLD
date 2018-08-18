@@ -7,10 +7,10 @@ position: absolute;
 top: 0;
 padding-top: 128px;
 color: white;
-text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
 width: 100%;
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 599px), screen and (max-height: 500px) and (min-width: 600px) {
   padding-top: 80px;
 }
 `

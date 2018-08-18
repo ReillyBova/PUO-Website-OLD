@@ -6,6 +6,9 @@ export const NavbarHeader = styled.header`
   top: 0;
   z-index: 15;
   background-color: white;
+  &.narrow {
+    position: absolute;
+  }
 `
 
 export const NavbarMain = styled.div`

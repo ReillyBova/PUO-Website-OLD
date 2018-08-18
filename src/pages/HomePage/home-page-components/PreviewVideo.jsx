@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components'
 import { largePreviewMP4, mediumPreviewMP4, smallPreviewMP4, tinyPreviewMP4 } from 'assets/videos'
 import $ from 'jquery'
-import { logoOrch } from 'assets/images'
 
 const VideoWrapper = styled.div`
   padding-top: 40px;
@@ -10,6 +9,10 @@ const VideoWrapper = styled.div`
   height: calc(100vh - 110px);
   overflow: hidden;
   background-color: black;
+
+  @media screen and (max-height: 500px) and (min-width: 600px) {
+    padding-top: 0;
+  }
 `
 
 const Video = styled.video`

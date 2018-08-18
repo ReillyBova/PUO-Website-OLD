@@ -8,14 +8,24 @@ import $ from 'jquery';
 class Navbar extends Component {
 
   scroll_navbar = () => {
-    if ($(document).scrollTop() > 115) {
+    if ($(document).scrollTop() > 115 || ($(window).height() < 500 && $(window).width() > 599)) {
       $('#navbarMain').addClass('mini');
     } else {
       $('#navbarMain').removeClass('mini');
     }
   }
 
-  resize_navbarTriangle = () => {
+  resize_navbar = () => {
+    // Height minification
+    if ($(window).height() < 500 && $(window).width() > 599) {
+      $('#navbarMain').addClass('mini');
+      $('#navbarHeader').addClass('narrow');
+    } else {
+      $('#navbarMain').removeClass('mini');
+      $('#navbarHeader').removeClass('narrow');
+    }
+
+    // Triangle
     const polygon1 = $('#navbarOrangeTriangle');
     const line1 =  $('#navbarOrangeLine');
     const width = $('#root').width();
@@ -58,15 +68,15 @@ class Navbar extends Component {
   }
 
   componentDidMount() {
-    this.resize_navbarTriangle();
+    this.resize_navbar();
 
     $(window).scroll(this.scroll_navbar);
-    $(window).resize(this.resize_navbarTriangle);
+    $(window).resize(this.resize_navbar);
   }
 
   render() {
     return (
-      <NavbarHeader>
+      <NavbarHeader id={"navbarHeader"}>
         <NavbarMain id={"navbarMain"}>
           <NavLink to={`${process.env.PUBLIC_URL}/`}>
             <NavbarBrand className={"navbar-brand"}>
