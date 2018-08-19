@@ -6,7 +6,8 @@ export const NavbarHeader = styled.header`
   top: 0;
   z-index: 15;
   background-color: white;
-  &.narrow {
+
+  @media screen and (min-width: 600px) and (max-height: 500px) {
     position: absolute;
   }
 `
@@ -212,6 +213,10 @@ export const NavbarMenu = styled.div`
   padding: 16px;
   transition: margin-top 0.5s ease;
   display: none;
+
+  @media screen and (min-width: 600px) and (max-height: 500px) {
+    position: absolute;
+  }
 
   ${NavbarMain}.mini & {
     margin-top: 70px !important;
