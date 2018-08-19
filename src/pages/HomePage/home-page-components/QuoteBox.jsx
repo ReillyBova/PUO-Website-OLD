@@ -1,30 +1,70 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick';
+import { VideoButton } from './'
 
 const Wrapper = styled.div`
 position: absolute;
 top: 0;
 padding-top: 128px;
-color: white;
-text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
 width: 100%;
+height: calc(100vh - 198px);
+display: flex;
+flex-direction: column;
 
 @media screen and (max-width: 599px), screen and (max-height: 500px) and (min-width: 600px) {
   padding-top: 80px;
+  height: calc(100vh - 150px);
 }
+
+`
+
+const QuoteSlider = styled(Slider)`
+flex: 0;
+color: white;
+text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+
+&:after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 4px;
+  margin: 12px auto;
+  background: ${props => props.theme.orange};
+  animation: orangeLine 1.2s;
+  animation-timing-function: ease;
+
+  @keyframes orangeLine {
+     from { width: 0; }
+     to   { width: 50%; }
+   }
+ }
+
+  @media screen and (max-height: 500px) and (min-width: 600px) {
+    @media screen and (max-height: 485px) {
+      display: none;
+    }
+    @media screen and (min-width: 1030px) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 599px) and (min-width: 420px) and (max-height: 460px) {
+    display: none;
+  }
+  @media screen and (max-width: 420px) and (max-height: 450px) {
+    display: none;
+  }
 `
 
 const Quote = styled.div`
 height: calc(75vh - 256px);
 width: 100%;
-display: block !important;
+display: flex !important;
+align-items: center;
 `
 
-const AlignBottom = styled.div`
-position: absolute;
-bottom: 0;
-width: 100%
+const Centerer = styled.div`
+width: 100%;
 `
 
 const QuoteText = styled.div`
@@ -52,7 +92,7 @@ transition: font-size, padding, .5s;
     }
     @media screen and (max-height: 585px) and (min-width: 1030px) {
       font-size: 22px;
-      @media screen and (max-height: 500px) and (min-width: 1030px) {
+      @media screen and (max-height: 500px) {
         display: none;
       }
     }
@@ -116,7 +156,7 @@ font-weight: 500;
     }
     @media screen and (max-height: 585px) and (min-width: 1030px) {
       font-size: 14px;
-      @media screen and (max-height: 500px) and (min-width: 1030px) {
+      @media screen and (max-height: 500px) {
         display: none;
       }
     }
@@ -208,35 +248,35 @@ export class QuoteBox extends Component {
   render() {
     const slickSettings = {
       dots: false,
-      prevArrow: false,
-      nextArrow: false,
+      arrows: false,
       fade: true,
       infinite: true,
       speed: 3000,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 8000
+      autoplaySpeed: 6000
     };
 
     return (
       <Wrapper>
-        <Slider {...slickSettings}>
+        <QuoteSlider {...slickSettings}>
           {this.state.quotes.map((quote, i) => {
             return (
               <Quote key={i}>
-                <AlignBottom>
+                <Centerer>
                   <QuoteText>
                      “{quote.text}”
                   </QuoteText>
                   <QuoteAuthor>
                     – {quote.author}
                   </QuoteAuthor>
-                </AlignBottom>
+                </Centerer>
               </Quote>
             )
           })}
-        </Slider>
+        </QuoteSlider>
+        <VideoButton />
       </Wrapper>
     )
   }

@@ -12,6 +12,7 @@ const VideoWrapper = styled.div`
 
   @media screen and (max-height: 500px) and (min-width: 600px) {
     padding-top: 0;
+    height: calc(100vh - 70px);
   }
 `
 
