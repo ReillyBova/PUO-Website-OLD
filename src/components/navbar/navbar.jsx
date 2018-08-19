@@ -19,10 +19,8 @@ class Navbar extends Component {
     // Height minification
     if ($(window).height() < 500 && $(window).width() > 599) {
       $('#navbarMain').addClass('mini');
-      $('#navbarHeader').addClass('narrow');
     } else {
       $('#navbarMain').removeClass('mini');
-      $('#navbarHeader').removeClass('narrow');
     }
 
     // Triangle
