@@ -20,8 +20,10 @@ injectGlobal`
     a {
       color: ${black};
       text-decoration: none;
-    &:hover {
-      color: ${orange};
+
+      &:hover, &.active {
+        color: ${orange};
+      }
     }
 
     ‑webkit‑text‑size‑adjust: 100%

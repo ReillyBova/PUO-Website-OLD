@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button';
 import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt';
-import { Link } from 'react-router-dom'
+import { DelayedLink } from 'components'
 
 const StyledButton = styled(Button)`
   font-size: 18px !important;
@@ -26,8 +26,9 @@ const StyledButton = styled(Button)`
 
     span {
       opacity: 1 !important;
+      animation-name: press-down !important;
 
-      @keyframes mui-ripple-enter {
+      @keyframes press-down {
         0% {
           opacity: 0.75;
           transform: scale(0);
@@ -43,12 +44,12 @@ const StyledButton = styled(Button)`
 
 const BackgroundButton = ({children}) => {
   return (
-    <Link to={'${process.env.PUBLIC_URL}/concerts'}>
+    <DelayedLink delay={500} to={`${process.env.PUBLIC_URL}/concerts`}>
       <StyledButton variant="outlined" color="primary"  >
         { children }
         <ArrowRightAlt style={{marginLeft: 8}} />
       </StyledButton>
-    </Link>
+    </DelayedLink>
   )
 }
 

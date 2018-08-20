@@ -8,7 +8,7 @@ display: flex;
 justify-content: center;
 flex: 1;
 align-items: center;
-margin-top: -30px;
+margin-top: -45px;
 `
 
 export const VideoButton = ({}) => {
