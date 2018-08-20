@@ -6,6 +6,14 @@ import { NavbarHeader, NavbarMain, NavbarBrand, NavbarButtons,
 import $ from 'jquery';
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.clickBrand = this.clickBrand.bind(this);
+
+    this.state = {
+      menuActive: false
+    }
+  }
 
   scroll_navbar = () => {
     if ($(document).scrollTop() > 115 || ($(window).height() < 500 && $(window).width() > 599)) {
@@ -39,11 +47,19 @@ class Navbar extends Component {
     polygon2.attr('points', `${width / 3},2 ${width},2 ${width},${maxH + 2}`);
   }
 
+  clickBrand() {
+    if (this.state.menuActive) {
+      this.toggleMenu()
+    }
+  }
+
   toggleMenu() {
+    const wasActive = this.state.menuActive;
+    this.setState({menuActive: !wasActive});
     $('#navbarMenu').slideToggle();
     $('#menuButton').toggleClass('active');
 
-    if ($('#menuButton').hasClass('active')) {
+    if (!wasActive) {
       $('#menuButtonL0').css({'transform-origin' : 'bottom left'})
       $('#menuButtonL0').css({'transform' : 'translateY(2.1px) rotate(-45deg)'})
       $('#menuButtonL4').css({'transform-origin' : 'top right'})
@@ -77,7 +93,7 @@ class Navbar extends Component {
       <NavbarHeader id={"navbarHeader"}>
         <NavbarMain id={"navbarMain"}>
           <NavLink to={`${process.env.PUBLIC_URL}/`}>
-            <NavbarBrand className={"navbar-brand"}>
+            <NavbarBrand className={"navbar-brand"} onClick={() => this.clickBrand()}>
               <img className={"navbar-brand-orch"} src={logoOrch} alt={""} />
               <img className={"navbar-brand-text below"} src={logoText} alt={""} />
               <img className={"navbar-brand-text inline"} src={logoText} alt={""} />
