@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { PreviewVideo, QuoteBox, VideoButton } from './home-page-components'
+import { PreviewVideo, QuoteBox } from './home-page-components'
 import { Parallax, RaisedPage, RaisedPageSection } from 'components'
 
 export class HomePage extends React.Component {

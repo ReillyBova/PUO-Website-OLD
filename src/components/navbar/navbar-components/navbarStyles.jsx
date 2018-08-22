@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Button from '@material-ui/core/Button';
 
 export const NavbarHeader = styled.header`
   width: 100%;
@@ -164,9 +165,9 @@ export const NavbarButtons = styled.div`
   }
 `
 
-export const NavbarButton = styled.div`
-  width: 32px;
-  height: 32px;
+export const NavbarButton = styled(Button)`
+  width: 64px;
+  height: 64px;
   cursor: pointer;
 
   animation: fadein 1s;

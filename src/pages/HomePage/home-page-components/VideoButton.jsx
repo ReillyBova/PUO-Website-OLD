@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { BackgroundButton } from 'components'
 import styled from 'styled-components'
-import Slider from 'react-slick';
 
 const Wrapper = styled.div`
 display: flex;
@@ -11,7 +10,7 @@ align-items: center;
 margin-top: -45px;
 `
 
-export const VideoButton = ({}) => {
+export const VideoButton = () => {
   return (
     <Wrapper>
       <BackgroundButton>
