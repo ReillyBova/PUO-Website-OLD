@@ -13,11 +13,11 @@ class HoverDropdown extends React.Component {
     this.headerRef = React.createRef();
   }
 
-  handleHover = (event) => {
+  handleHover = () => {
     this.setState({ showList: true });
   };
 
-  handleLeave = (event) => {
+  handleLeave = () => {
     this.setState({ showList: false });
   };
 

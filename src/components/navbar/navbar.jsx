@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import $ from 'jquery';
 import { NavLink } from 'react-router-dom'
-import { NavHashLink } from 'react-router-hash-link';
 import { logoOrch, logoText } from 'assets/images'
-import { HoverDropdown } from 'components'
 import { NavbarHeader, NavbarMain, NavbarBrand, NavbarButtons,
-         NavbarButton, NavbarLinks, NavbarMenu, NavbarLink, NavbarTriangle,
-         NavbarDropdownLink } from './navbar-components'
+         NavbarButton, NavbarTriangle, DesktopLinks, MobileMenu } from './navbar-components'
 
 class Navbar extends Component {
   constructor(props) {
@@ -16,6 +13,17 @@ class Navbar extends Component {
     this.state = {
       menuActive: false
     }
+
+    this.navData = [
+      {header: 'Concerts'},
+      {header: 'Members'},
+      {header: 'About', list: ['The Orchestra', 'Conductor', 'Officers', 'Contact Us']},
+      {header: 'Media', list: ['Video', 'Audio', 'Photo Gallery']},
+      {header: 'News', list: ['Announcements', 'In the Press', 'Conductor’s Blog']},
+      {header: 'FAQ', list: ['For Our Audience', 'For Princeton Students', 'For Prospective High School Students']},
+      {header: 'Archives', list: ['Past Seasons', 'Past Tours', 'Past Orchestras']},
+      {header: 'Donate'}
+    ]
   }
 
   scroll_navbar = () => {
@@ -118,136 +126,8 @@ class Navbar extends Component {
               </svg>
             </NavbarButton>
           </NavbarButtons>
-          <NavbarLinks>
-            <NavbarLink>
-              <NavLink to={`${process.env.PUBLIC_URL}/concerts`}>{`Concerts`}</NavLink>
-            </NavbarLink>
-            <NavbarLink>
-              <NavLink to={`${process.env.PUBLIC_URL}/members`}>{`Members`}</NavLink>
-            </NavbarLink>
-            <HoverDropdown
-              header = {
-                <NavbarLink>
-                  <NavLink to={`${process.env.PUBLIC_URL}/about`}>{`About`}</NavLink>
-                </NavbarLink>
-              }
-              list = {[
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/about#orchestra`}>{`The Orchestra`}</NavHashLink>
-                </NavbarDropdownLink>,
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/about#conductor`}>{`Conductor`}</NavHashLink>
-                </NavbarDropdownLink>,
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/about#officers`}>{`Officers`}</NavHashLink>
-                </NavbarDropdownLink>,
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/about#contact-us`}>{`Contact Us`}</NavHashLink>
-                </NavbarDropdownLink>
-              ]}
-            />
-            <HoverDropdown
-              header = {
-                <NavbarLink>
-                  <NavLink to={`${process.env.PUBLIC_URL}/media`}>{`Media`}</NavLink>
-                </NavbarLink>
-              }
-              list = {[
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/media#video`}>{`Video`}</NavHashLink>
-                </NavbarDropdownLink>,
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/media#audio`}>{`Audio`}</NavHashLink>
-                </NavbarDropdownLink>,
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/media#photo-gallery`}>{`Photo Gallery`}</NavHashLink>
-                </NavbarDropdownLink>
-              ]}
-            />
-            <HoverDropdown
-              header = {
-                <NavbarLink>
-                  <NavLink to={`${process.env.PUBLIC_URL}/news`}>{`News`}</NavLink>
-                </NavbarLink>
-              }
-              list = {[
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/news#announcements`}>{`Announcements`}</NavHashLink>
-                </NavbarDropdownLink>,
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/news#in-the-press`}>{`In the Press`}</NavHashLink>
-                </NavbarDropdownLink>,
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/news#conductors-blog`}>{`Conductor’s Blog`}</NavHashLink>
-                </NavbarDropdownLink>
-              ]}
-            />
-            <HoverDropdown
-              header = {
-                <NavbarLink>
-                  <NavLink to={`${process.env.PUBLIC_URL}/faq`}>{`FAQ`}</NavLink>
-                </NavbarLink>
-              }
-              list = {[
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/faq#for-our-audience`}>{`For Our Audience`}</NavHashLink>
-                </NavbarDropdownLink>,
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/faq#for-princeton-students`}>{`For Princeton Students`}</NavHashLink>
-                </NavbarDropdownLink>,
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/faq#for-prospective-high-school-students`}>{`For Prospective High School Students`}</NavHashLink>
-                </NavbarDropdownLink>
-              ]}
-            />
-            <HoverDropdown
-              header = {
-                <NavbarLink>
-                  <NavLink to={`${process.env.PUBLIC_URL}/archives`}>{`Archives`}</NavLink>
-                </NavbarLink>
-              }
-              list = {[
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/archives#past-seasons`}>{`Past Seasons`}</NavHashLink>
-                </NavbarDropdownLink>,
-                <NavbarDropdownLink>
-                <NavHashLink smooth to={`${process.env.PUBLIC_URL}/archives#past-tours`}>{`Past Tours`}</NavHashLink>
-                  </NavbarDropdownLink>,
-                <NavbarDropdownLink>
-                  <NavHashLink smooth to={`${process.env.PUBLIC_URL}/archives#past-orchestras`}>{`Past Orchestras`}</NavHashLink>
-                </NavbarDropdownLink>
-              ]}
-            />
-            <NavbarLink>
-              <NavLink to={`${process.env.PUBLIC_URL}/donate`}>{`Donate`}</NavLink>
-            </NavbarLink>
-          </NavbarLinks>
-          <NavbarMenu id={"navbarMenu"}>
-            <NavbarLink onClick={() => this.toggleMenu()}>
-              <NavLink to={`${process.env.PUBLIC_URL}/concerts`}>{`Concerts`}</NavLink>
-            </NavbarLink>
-            <NavbarLink onClick={() => this.toggleMenu()}>
-              <NavLink to={`${process.env.PUBLIC_URL}/members`}>{`Members`}</NavLink>
-            </NavbarLink>
-            <NavbarLink onClick={() => this.toggleMenu()}>
-              <NavLink to={`${process.env.PUBLIC_URL}/about`}>{`About`}</NavLink>
-            </NavbarLink>
-            <NavbarLink onClick={() => this.toggleMenu()}>
-              <NavLink to={`${process.env.PUBLIC_URL}/media`}>{`Media`}</NavLink>
-            </NavbarLink>
-            <NavbarLink onClick={() => this.toggleMenu()}>
-              <NavLink to={`${process.env.PUBLIC_URL}/news`}>{`News`}</NavLink>
-            </NavbarLink>
-            <NavbarLink onClick={() => this.toggleMenu()}>
-              <NavLink to={`${process.env.PUBLIC_URL}/faq`}>{`FAQ`}</NavLink>
-            </NavbarLink>
-            <NavbarLink onClick={() => this.toggleMenu()}>
-              <NavLink to={`${process.env.PUBLIC_URL}/archives`}>{`Archives`}</NavLink>
-            </NavbarLink>
-            <NavbarLink onClick={() => this.toggleMenu()}>
-              <NavLink to={`${process.env.PUBLIC_URL}/donate`}>{`Donate`}</NavLink>
-            </NavbarLink>
-          </NavbarMenu>
+          <DesktopLinks navData={this.navData} />
+          <MobileMenu navData={this.navData} toggleMenu={this.toggleMenu.bind(this)} />
         </NavbarMain>
         <NavbarTriangle className="black">
           <polygon id="navbarBlackTriangle" fill="currentColor" points="0,0 0,0 0,0"></polygon>

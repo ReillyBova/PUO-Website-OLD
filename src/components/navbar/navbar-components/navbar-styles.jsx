@@ -207,11 +207,11 @@ export const NavbarLinks = styled.nav`
 export const NavbarMenu = styled.div`
   overflow-y: auto;
   max-height: 48vh;
+  padding: 12px 0;
   position: fixed;
   background-color: ${props => props.theme.black};
   width: 100%;
   margin-top: 165px;
-  padding: 16px;
   transition: margin-top 0.5s ease;
   display: none;
 
@@ -279,17 +279,8 @@ export const NavbarLink = styled.div`
 
   @media screen and (max-width: 700px) {
     font-size: 24px;
-
-    float: left;
-    white-space: nowrap;
-    margin: 4px 700px 4px 0;
-    a {
-      color: ${props => props.theme.offWhite};
-
-      &:hover {
-        color: ${props => props.theme.orange};
-      }
-    }
+    width: fit-content;
+    margin: 6px 16px;
   }
 `
 
