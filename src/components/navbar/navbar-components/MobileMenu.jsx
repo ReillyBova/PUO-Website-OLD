@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
-import { NavHashLink } from 'react-router-hash-link';
-import { logoOrch, logoText } from 'assets/images'
-import { HoverDropdown } from 'components'
-import { NavbarHeader, NavbarMain, NavbarBrand, NavbarButtons,
-         NavbarButton, NavbarLinks, NavbarMenu, NavbarLink, NavbarTriangle,
-         NavbarDropdownLink, MobileDropdown } from './'
+import { NavHashLink } from 'react-router-hash-link'
+import { NavbarMenu, NavbarLink, MobileDropdown } from './'
 
 const MobileNavbarLinkWrapper = styled.div`
   width: 100%;
