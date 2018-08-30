@@ -189,7 +189,7 @@ export const NavbarButton = styled(Button)`
   &.active { svg { stroke: ${props => props.theme.orange} !important; } }
 `
 
-export const NavbarLinks = styled.div`
+export const NavbarLinks = styled.nav`
   padding: 0 16px 0 24px;
   margin-left: 225px;
   height: 100%;
@@ -259,6 +259,12 @@ export const NavbarLink = styled.div`
     background: ${props => props.theme.orange};
   }
 
+  &:hover {
+    a {
+      color: ${props => props.theme.orange};
+    }
+  }
+
   @media screen and (min-width: 768px) {
     &:hover::after {
       width:100%;
@@ -284,6 +290,23 @@ export const NavbarLink = styled.div`
         color: ${props => props.theme.orange};
       }
     }
+  }
+`
+
+export const NavbarDropdownLink = styled.div`
+  font-size: 18px;
+  width: 100%;
+  transition: font-size, 0.5s ease;
+
+  a {
+    display: block;
+    padding: 18px;
+    transition: padding 0.5s, color 0.2s;
+  }
+
+  ${NavbarMain}.mini & {
+    font-size: 14px;
+    a { padding: 14px; }
   }
 `
 

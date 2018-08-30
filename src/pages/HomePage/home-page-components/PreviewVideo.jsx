@@ -67,6 +67,10 @@ export class PreviewVideo extends React.Component {
     this.resize_video()
   }
 
+  componentWillUnmount() {
+    $(window).off('resize', this.resize_video)
+  }
+
   render() {
     const { size, loaded } = this.state
     return (

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button';
-import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt';
 import { DelayedLink } from 'components'
 
 const StyledButton = styled(Button)`
@@ -26,7 +25,7 @@ const StyledButton = styled(Button)`
 
     span {
       opacity: 1 !important;
-      animation-name: press-down !important;
+      animation: press-down 550ms cubic-bezier(0.4, 0, 0.2, 1) !important;
 
       @keyframes press-down {
         0% {
@@ -47,7 +46,6 @@ const BackgroundButton = ({children}) => {
     <DelayedLink delay={500} to={`${process.env.PUBLIC_URL}/concerts`}>
       <StyledButton variant="outlined" color="primary"  >
         { children }
-        <ArrowRightAlt style={{marginLeft: 8}} />
       </StyledButton>
     </DelayedLink>
   )

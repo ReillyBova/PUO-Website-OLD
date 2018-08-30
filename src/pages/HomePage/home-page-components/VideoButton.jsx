@@ -1,6 +1,7 @@
 import React from 'react'
 import { BackgroundButton } from 'components'
 import styled from 'styled-components'
+import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt';
 
 const Wrapper = styled.div`
 display: flex;
@@ -15,6 +16,7 @@ export const VideoButton = () => {
     <Wrapper>
       <BackgroundButton>
         Explore Our 2018 – 2019 Season
+        <ArrowRightAlt style={{marginLeft: 8}} />
       </BackgroundButton>
     </Wrapper>
   )

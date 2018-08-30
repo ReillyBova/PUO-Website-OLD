@@ -12,9 +12,9 @@ export class HomePage extends React.Component {
           <QuoteBox />
         </Parallax>
         <RaisedPage>
-          <RaisedPageSection>
-            HELOOkwajhdwkhdkah kjhjahdkahdkjwdhawkdjhawkdjawhdkjwhdawkj
-          </RaisedPageSection>
+            <p>
+              Lorem ipsum dolor amet
+            </p>
         </RaisedPage>
       </Fragment>
     )
