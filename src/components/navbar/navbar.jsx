@@ -35,12 +35,8 @@ class Navbar extends Component {
   }
 
   resize_navbar = () => {
-    // Height minification
-    if ($(window).height() < 500 && $(window).width() > 599) {
-      $('#navbarMain').addClass('mini');
-    } else {
-      $('#navbarMain').removeClass('mini');
-    }
+    // Take care of scroll in case of small height
+    this.scroll_navbar();
 
     // Triangle
     const polygon1 = $('#navbarOrangeTriangle');
