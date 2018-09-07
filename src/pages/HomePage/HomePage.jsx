@@ -13,7 +13,7 @@ export class HomePage extends React.Component {
         </Parallax>
         <RaisedPage>
             <p>
-              Lorem ipsum dolor amet
+              Lorem ipsum dolor amet test
             </p>
         </RaisedPage>
       </Fragment>
